@@ -1,0 +1,72 @@
+---
+import aboutImg from "@/assets/about-astro.png";
+import PageLayout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+
+const meta = {
+	description: "I'm a starter theme for Astro.build",
+	title: "About",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">About</h1>
+		<p class="mb-4 first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-start">
+			As a child, I enjoyed RPG games like Pokemon, which led to my first programming experiences in school using assembler for PIC microcontrollers and C. I once traded my first Discman for a book on Intel processor ASM—a questionable deal in retrospect. Inspired by shows like Battlebots, Medabots, and Transformers, I pursued a related field.
+			I collect mechanical keyboards and once learned Dvorak, hoping to revisit it.
+			I completed my Mechatronics Engineering degree at UNI in 2013 and have since worked as a Software Engineer, specializing in Python across Backend, Devops, and currently as a Data Engineer at Foris.
+		</p>
+		<div class="flex justify-center">
+			<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="9b39b6f3-2886-4465-b99c-b06017b88cde" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+		</div>
+
+
+		<h2 class="text-xl font-extrabold">
+		🛠
+		<span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+		Toolbox
+		</span>
+	</h2>
+		<p class="font-extrabold">Python Frameworks:</p>
+		<ul class="list-inside list-disc">
+			<li>Django</li>
+			<li>Flask</li>
+			<li>FastAPI</li>
+			<li>Falcon</li>
+			<li>CherryPy</li>
+		</ul>
+
+		<p class="mb-2 font-extrabold">Databases:</p>
+		<ul class="list-inside list-disc">
+			<li>AWS: RDS / Aurora / Athena / DynamoDB</li>
+			<li>Postgres</li>
+			<li>MySQL</li>
+			<li>MongoDB</li>
+		</ul>
+
+		<p class="mb-2 font-extrabold">Cache:</p>
+		<ul class="list-inside list-disc">
+		<li>AWS: Elastic Cache</li>
+			<li>Redis</li>
+			<li>Memcached</li>
+			<li>Varnish</li>
+		</ul>
+
+		<p class="mb-2  font-extrabold">Messaging:</p>
+		<ul class="list-inside list-disc">
+		<li>AWS: SQS / SNS</li>
+			<li>RabbitMQ</li>
+			<li>ZeroMQ</li>
+		</ul>
+		<!-- <p>
+			Clone or fork my <a
+				aria-label="github repository"
+				class="cactus-link inline-block"
+				href="https://github.com/chrismwilliams/astro-cactus"
+				rel="noopener noreferrer"
+				target="_blank">repo</a
+			> if you like me!
+		</p> -->
+	</div>
+</PageLayout>
