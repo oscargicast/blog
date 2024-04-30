@@ -7,13 +7,6 @@ tags: ["linear systems", "latex"]
 
 ## Define a single equation
 
-<!-- ```py title="my-test-file.js"
-print(2)
-
-def asdas(asda: str):
-  return x + asda
-``` -->
-
 To represent and inline equation like this: $$a + b + c = 10$$, use the following syntax:
 ```latex
 $$a + b + c = 10$$
@@ -51,18 +44,6 @@ a + 2b &= 12
 ```
 
 **In the same system:**
-
-<!-- $$
-\begin{equation}
-  \left\{
-    \begin{array}{rcl}
-      a + b & = & 10 \\
-      a + 2b & = & 12
-    \end{array}
-  \right.
-  \label{eq:system}
-\end{equation}
-$$ -->
 
 <div id="eq:linear-system">
 $$
