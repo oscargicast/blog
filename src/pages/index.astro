@@ -2,6 +2,7 @@
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
+import catWaveEmoji from "@/assets/cat_wave.gif";
 import { getAllPosts, sortMDByDate } from "@/data/post";
 
 const MAX_POSTS = 10;
@@ -54,7 +55,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-6">¡Hola mundo!</h1>
+    <h1 class="title mb-6 flex items-center text-center">
+      ¡Hola mundo!
+      <img src={catWaveEmoji.src} alt="cat waving" class="inline h-10 w-10 ml-2"/>
+    </h1>
 		<p class="mb-4 first-letter:text-3xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-start">
 			I am a Python 🐍 backend engineer with more than 8 years of experience developing and leading IT teams.
 			I have Experience designing and building RESTful and GraphQL APIs, implementing BDD, TDD, CI/CD
