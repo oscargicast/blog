@@ -119,8 +119,24 @@ A = np.array([
 b = np.array([7, 1], dtype=np.dtype(float))
 x = np.linalg.solve(A, b)
 ```
-Output:
+
+Output (Only has one solution):
 ```bash title="Solution"
 [-1.  2.]
 ```
 
+> `np.linalg` is a numpy module related to linear algebra and matrix operations.
+
+The matrix $A$ is non-singular because its determinant is not zero.
+$$
+ \det(A) = -1 \cdot 2 - 3 \cdot 3 = -2 - 9 = -11 \ne 0
+$$
+
+```python
+det_A = np.linalg.det(A)
+print(f"Determinant of matrix A: {d:.2f}")
+```
+Output:
+```bash
+Determinant of matrix A: -11.00
+```
