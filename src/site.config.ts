@@ -65,6 +65,8 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 		return `[data-theme="${theme.name}"]`;
 	},
 	// One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes
-	themes: ["material-theme-palenight", "solarized-light"],
+	// themes: ["material-theme-palenight", "dracula"],
+	// themes: ["material-theme-palenight", "solarized-light"],
+	themes: ["monokai", "github-light"],
 	useThemedScrollbars: false,
 };

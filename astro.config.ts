@@ -7,6 +7,8 @@ import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import fs from "fs";
 import rehypeExternalLinks from "rehype-external-links";
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 import remarkUnwrapImages from "remark-unwrap-images";
 
 import { expressiveCodeOptions } from "./src/site.config";
@@ -54,10 +56,16 @@ export default defineConfig({
 				{
 					rel: ["nofollow, noopener, noreferrer"],
 					target: "_blank",
-				},
+				}
 			],
+      [
+        rehypeKatex,
+				{
+					// Katex plugin options
+				}
+      ]
 		],
-		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+    remarkPlugins: [remarkUnwrapImages, remarkReadingTime, remarkMath],
 		remarkRehype: {
 			footnoteLabelProperties: {
 				className: [""],

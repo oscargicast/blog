@@ -30,14 +30,20 @@ importers:
         specifier: 4.5.16
         version: 4.5.16(@types/node@20.11.17)(typescript@5.4.5)
       astro-expressive-code:
-        specifier: ^0.34.1
-        version: 0.34.1(astro@4.5.16(@types/node@20.11.17)(typescript@5.4.5))
+        specifier: ^0.35.2
+        version: 0.35.2(astro@4.5.16(@types/node@20.11.17)(typescript@5.4.5))
       astro-icon:
         specifier: ^1.1.0
         version: 1.1.0
       rehype-external-links:
         specifier: ^3.0.0
         version: 3.0.0
+      rehype-katex:
+        specifier: ^7.0.0
+        version: 7.0.0
+      remark-math:
+        specifier: ^6.0.0
+        version: 6.0.0
       satori:
         specifier: 0.10.13
         version: 0.10.13
@@ -332,9 +338,9 @@ packages:
     resolution: {integrity: sha512-+j7a5c253RfKh8iABBhywc8NSfP5LURe7Uh4qpsh6jc+aLJguvmIUBdjSdEMQv2bENrCR5MfRdjGo7vzS/ob7w==}
     engines: {node: '>=6.9.0'}
 
-  '@ctrl/tinycolor@3.6.1':
-    resolution: {integrity: sha512-SITSV6aIXsuVNV3f3O0f2n/cgyEDWoSqtZMYiAmcsYHydcKrOz3gUxB/iXd/Qf08+IZX4KpgNbvUdMBmWz+kcA==}
-    engines: {node: '>=10'}
+  '@ctrl/tinycolor@4.1.0':
+    resolution: {integrity: sha512-WyOx8cJQ+FQus4Mm4uPIZA64gbk3Wxh0so5Lcii0aJifqwoVOlfFtorjLE0Hen4OYyHZMXDWqMmaQemBhgxFRQ==}
+    engines: {node: '>=14'}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -642,17 +648,17 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@expressive-code/core@0.34.1':
-    resolution: {integrity: sha512-lq9Blzw9wrw0H+g/I96IGb4rxiO1PrfLySa3yRQYzHKH2YJwFFPTqXLSLzoZLUUkdPs5rD9JgeMtrlJ1uVvXkg==}
+  '@expressive-code/core@0.35.2':
+    resolution: {integrity: sha512-lInKOxMvcvVTrRB8qjsH6PDQ5+rz9o3lyoUh+2xxvdWmnpcTE7JVWWcVfDrLfEXZb+6KQWlWqD0J50u1+xe8Rg==}
 
-  '@expressive-code/plugin-frames@0.34.1':
-    resolution: {integrity: sha512-OOsIva7/eDWJ5gUp6QaoxovClrYM3OpddvV1izL7CpLWnSETsb/eNtwvMG4JmyTJwV6pfMpbitsithPCli08DQ==}
+  '@expressive-code/plugin-frames@0.35.2':
+    resolution: {integrity: sha512-ABj9WQinforkAvBzCTOd3puuGWaKm1mzts7yck1YNyfh4uQGLxabvjKIj69WYA75+Ccd0edy0b1QzIqwecJpzg==}
 
-  '@expressive-code/plugin-shiki@0.34.1':
-    resolution: {integrity: sha512-kMhxP7slGnGTsh5eo4UUKur/MMSk35wMxIbPgZ1M/H9KR0FdnyMOXqu15vWJrANHBHIhMygjbbndYM37VWvc2g==}
+  '@expressive-code/plugin-shiki@0.35.2':
+    resolution: {integrity: sha512-V+pAhT3m0xAbwHvDT9DLpZLkksYKeNNTDIEHE0VHoZfw9IibvG6QcrH8FjMQnxv1DfvWjkYV4wob7/TZKlGU6w==}
 
-  '@expressive-code/plugin-text-markers@0.34.1':
-    resolution: {integrity: sha512-V0NI56S5vsYUCMEoEXbpiACcVDgEbteBeeBS4RthV2bltDLkOvMfTRr2xHfO8zNLtjcYyu90nXR/ans8RZit1w==}
+  '@expressive-code/plugin-text-markers@0.35.2':
+    resolution: {integrity: sha512-YD/QhTBoCGXWCE40BD3Wg1XXAR0eVVFYL0TZaD8JjdRqVDmmRtZmhiG+/luXfbe9xZy5qEw4ZFXiQrJkUH6DJQ==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -1084,6 +1090,9 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
+  '@types/katex@0.16.7':
+    resolution: {integrity: sha512-HMwFiRujE5PjrgwHQ25+bsLJgowjGjm5Z8FVSf0N6PwgJrwxH0QxzHYDcKsTfV3wva0vzrpqMTJS2jXPr5BMEQ==}
+
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
 
@@ -1385,8 +1394,8 @@ packages:
     resolution: {integrity: sha512-yTgzioUI9MKgBF4LxP7YI+uuZLrnXgHDeW4dpa3VqCNbDmPzL7ix93tc0JJIwWGcskoSAAHZZVaBSp8bHyZZZA==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  astro-expressive-code@0.34.1:
-    resolution: {integrity: sha512-MoXRdAXnYif0tlxCXNH1tWMCWd4wTQZeBy8l2OMm/U49KqJ/UsBOQa/JjH0R7hLp3TSvmvg1bMCIWo9kwy+6ag==}
+  astro-expressive-code@0.35.2:
+    resolution: {integrity: sha512-euLMzMBRyNjniHIdla2yjBEFVKbYJxo5jdzsFB/2M/nf3hgKs9o6VU41HEvKEnk5Pf2NhFtgUGGwrIrjwuHhyA==}
     peerDependencies:
       astro: ^4.0.0-beta || ^3.3.0
 
@@ -1639,6 +1648,10 @@ packages:
   commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+
+  commander@8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
+    engines: {node: '>= 12'}
 
   comment-parser@1.4.1:
     resolution: {integrity: sha512-buhp5kePrmda3vhc5B9t7pUQXAb2Tnd0qgpkIhPhkHXxJpiPJ11H0ZEU0oBpJ2QztSbzG/ZxMj/CHsYJqRHmyg==}
@@ -2072,8 +2085,8 @@ packages:
     resolution: {integrity: sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==}
     engines: {node: '>=6'}
 
-  expressive-code@0.34.1:
-    resolution: {integrity: sha512-tYEmzezu5k/AM6nf52/Ctrj2uPYB3UQtfflWpLgFTvUbhaSPXbcvvaqPlDMgLVUUii55Mg1CFVnhhtbZwgHjDA==}
+  expressive-code@0.35.2:
+    resolution: {integrity: sha512-Cc4W+DqnnULYnia42UrfRlqshCL2vci/X9EUSutiz6PK6+vNNXrG3c0BQmBJr+nRj0lde9F/O1IxZXAK9UBZ0w==}
 
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
@@ -2306,6 +2319,12 @@ packages:
   hasown@2.0.0:
     resolution: {integrity: sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==}
     engines: {node: '>= 0.4'}
+
+  hast-util-from-dom@5.0.0:
+    resolution: {integrity: sha512-d6235voAp/XR3Hh5uy7aGLbM3S4KamdW0WEgOaU1YoewnuYw4HXb5eRtv9g65m/RFGEfUY1Mw4UqCc5Y8L4Stg==}
+
+  hast-util-from-html-isomorphic@2.0.0:
+    resolution: {integrity: sha512-zJfpXq44yff2hmE0XmwEOzdWin5xwH+QIhMLOScpX91e/NSGPsAzNCvLQDIEPyO2TXi+lBmU6hjLIhV8MwP2kw==}
 
   hast-util-from-html@2.0.1:
     resolution: {integrity: sha512-RXQBLMl9kjKVNkJTIO6bZyb2n+cUH8LFaSSzo82jiLT6Tfc+Pt7VQCS+/h3YwG4jaNE2TA2sdJisGWR+aJrp0g==}
@@ -2667,6 +2686,10 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
+  katex@0.16.10:
+    resolution: {integrity: sha512-ZiqaC04tp2O5utMsl2TEZTXxa6WSC4yo0fv5ML++D3QZv/vx2Mct0mTlRx3O+uUkjfuAgOkzsCmq5MiUEsDDdA==}
+    hasBin: true
+
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -2798,6 +2821,9 @@ packages:
   mdast-util-gfm@3.0.0:
     resolution: {integrity: sha512-dgQEX5Amaq+DuUqf26jJqSK9qgixgd6rYDHAv4aTBuA92cTknZlKpPfa86Z/s8Dj8xsAQpFfBmPUHWJBWqS4Bw==}
 
+  mdast-util-math@3.0.0:
+    resolution: {integrity: sha512-Tl9GBNeG/AhJnQM221bJR2HPvLOSnLE/T9cJI9tlc6zwQk2nPk/4f0cHkOdEixQPC/j8UtKDdITswvLAy1OZ1w==}
+
   mdast-util-mdx-expression@2.0.0:
     resolution: {integrity: sha512-fGCu8eWdKUKNu5mohVGkhBXCXGnOTLuFqOvGMvdikr+J1w7lDJgxThOKpwRWzzbyXAU2hhSwsmssOY4yTokluw==}
 
@@ -2861,6 +2887,9 @@ packages:
 
   micromark-extension-gfm@3.0.0:
     resolution: {integrity: sha512-vsKArQsicm7t0z2GugkCKtZehqUm31oeGBV/KVSorWSy8ZlNAv7ytjFhvaryUiCUJYqs+NoE6AFhpQvBTM6Q4w==}
+
+  micromark-extension-math@3.0.0:
+    resolution: {integrity: sha512-iJ2Q28vBoEovLN5o3GO12CpqorQRYDPT+p4zW50tGwTfJB+iv/VnB6Ini+gqa24K97DwptMBBIvVX6Bjk49oyQ==}
 
   micromark-extension-mdx-expression@3.0.0:
     resolution: {integrity: sha512-sI0nwhUDz97xyzqJAbHQhp5TfaxEvZZZ2JDqUo+7NvyIYG6BZ5CPPqj2ogUoPJlmXHBnyZUzISg9+oUmU6tUjQ==}
@@ -3451,8 +3480,14 @@ packages:
     resolution: {integrity: sha512-sy6TXMN+hnP/wMy+ISxg3krXx7BAtWVO4UouuCN/ziM9UEne0euamVNafDfvC83bRNr95y0V5iijeDQFUNpvrg==}
     engines: {node: '>= 0.4'}
 
+  rehype-expressive-code@0.35.2:
+    resolution: {integrity: sha512-ydaCdmRW9mPDt8TUh69HzS7E7kQZcwi0Z4nZyWTUjX3nVPx3kA8TAHe/oWjtMGSsIP+7xAybrCpNNNEMXmzWqQ==}
+
   rehype-external-links@3.0.0:
     resolution: {integrity: sha512-yp+e5N9V3C6bwBeAC4n796kc86M4gJCdlVhiMTxIrJG5UHDMh+PJANf9heqORJbt1nrCbDwIlAZKjANIaVBbvw==}
+
+  rehype-katex@7.0.0:
+    resolution: {integrity: sha512-h8FPkGE00r2XKU+/acgqwWUlyzve1IiOKwsEkg4pDL3k48PiE0Pt+/uLtVHDVkN1yA4iurZN6UES8ivHVEQV6Q==}
 
   rehype-parse@9.0.0:
     resolution: {integrity: sha512-WG7nfvmWWkCR++KEkZevZb/uw41E8TsH4DsY9UxsTbIXCVGbAs4S+r8FrQ+OtH5EEQAs+5UxKC42VinkmpA1Yw==}
@@ -3466,11 +3501,11 @@ packages:
   rehype@13.0.1:
     resolution: {integrity: sha512-AcSLS2mItY+0fYu9xKxOu1LhUZeBZZBx8//5HKzF+0XP+eP8+6a5MXn2+DW2kfXR6Dtp1FEXMVrjyKAcvcU8vg==}
 
-  remark-expressive-code@0.34.1:
-    resolution: {integrity: sha512-dUuSaswyUqXDDRN+2YL5KMVfaMgUltKeh6wav2YNnapJ8wBRMCr7ucuxkUPrTZIuElHQ6+VCINALuEvmnPxxmw==}
-
   remark-gfm@4.0.0:
     resolution: {integrity: sha512-U92vJgBPkbw4Zfu/IiW2oTZLSL3Zpv+uI7My2eq8JxKgqraFdU8YUGicEJCEgSbeaG+QDFqIcwwfMTOEelPxuA==}
+
+  remark-math@6.0.0:
+    resolution: {integrity: sha512-MMqgnP74Igy+S3WwnhQ7kqGlEerTETXMvJhrUzDikVZ2/uogJCb+WHUg97hK9/jcfc0dkD73s3LN8zU49cTEtA==}
 
   remark-mdx@3.0.1:
     resolution: {integrity: sha512-3Pz3yPQ5Rht2pM5R+0J2MrGoBSrzf+tJG94N+t/ilfdh8YLyyKYtidAYwTveB20BoHAcwIopOUqhcmh2F7hGYA==}
@@ -4506,7 +4541,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  '@ctrl/tinycolor@3.6.1': {}
+  '@ctrl/tinycolor@4.1.0': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
@@ -4684,9 +4719,9 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@expressive-code/core@0.34.1':
+  '@expressive-code/core@0.35.2':
     dependencies:
-      '@ctrl/tinycolor': 3.6.1
+      '@ctrl/tinycolor': 4.1.0
       hast-util-select: 6.0.2
       hast-util-to-html: 9.0.1
       hast-util-to-text: 4.0.1
@@ -4696,18 +4731,18 @@ snapshots:
       unist-util-visit: 5.0.0
       unist-util-visit-parents: 6.0.1
 
-  '@expressive-code/plugin-frames@0.34.1':
+  '@expressive-code/plugin-frames@0.35.2':
     dependencies:
-      '@expressive-code/core': 0.34.1
+      '@expressive-code/core': 0.35.2
 
-  '@expressive-code/plugin-shiki@0.34.1':
+  '@expressive-code/plugin-shiki@0.35.2':
     dependencies:
-      '@expressive-code/core': 0.34.1
+      '@expressive-code/core': 0.35.2
       shiki: 1.2.4
 
-  '@expressive-code/plugin-text-markers@0.34.1':
+  '@expressive-code/plugin-text-markers@0.35.2':
     dependencies:
-      '@expressive-code/core': 0.34.1
+      '@expressive-code/core': 0.35.2
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -5093,6 +5128,8 @@ snapshots:
   '@types/json-schema@7.0.15': {}
 
   '@types/json5@0.0.29': {}
+
+  '@types/katex@0.16.7': {}
 
   '@types/mdast@3.0.15':
     dependencies:
@@ -5517,10 +5554,10 @@ snapshots:
       - supports-color
       - typescript
 
-  astro-expressive-code@0.34.1(astro@4.5.16(@types/node@20.11.17)(typescript@5.4.5)):
+  astro-expressive-code@0.35.2(astro@4.5.16(@types/node@20.11.17)(typescript@5.4.5)):
     dependencies:
       astro: 4.5.16(@types/node@20.11.17)(typescript@5.4.5)
-      remark-expressive-code: 0.34.1
+      rehype-expressive-code: 0.35.2
 
   astro-icon@1.1.0:
     dependencies:
@@ -5862,6 +5899,8 @@ snapshots:
   commander@4.1.1: {}
 
   commander@7.2.0: {}
+
+  commander@8.3.0: {}
 
   comment-parser@1.4.1: {}
 
@@ -6471,12 +6510,12 @@ snapshots:
   expand-template@2.0.3:
     optional: true
 
-  expressive-code@0.34.1:
+  expressive-code@0.35.2:
     dependencies:
-      '@expressive-code/core': 0.34.1
-      '@expressive-code/plugin-frames': 0.34.1
-      '@expressive-code/plugin-shiki': 0.34.1
-      '@expressive-code/plugin-text-markers': 0.34.1
+      '@expressive-code/core': 0.35.2
+      '@expressive-code/plugin-frames': 0.35.2
+      '@expressive-code/plugin-shiki': 0.35.2
+      '@expressive-code/plugin-text-markers': 0.35.2
 
   extend-shallow@2.0.1:
     dependencies:
@@ -6721,6 +6760,19 @@ snapshots:
   hasown@2.0.0:
     dependencies:
       function-bind: 1.1.2
+
+  hast-util-from-dom@5.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      hastscript: 8.0.0
+      web-namespaces: 2.0.1
+
+  hast-util-from-html-isomorphic@2.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      hast-util-from-dom: 5.0.0
+      hast-util-from-html: 2.0.1
+      unist-util-remove-position: 5.0.0
 
   hast-util-from-html@2.0.1:
     dependencies:
@@ -7160,6 +7212,10 @@ snapshots:
       object.assign: 4.1.4
       object.values: 1.1.7
 
+  katex@0.16.10:
+    dependencies:
+      commander: 8.3.0
+
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -7344,6 +7400,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  mdast-util-math@3.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/mdast': 4.0.3
+      devlop: 1.1.0
+      longest-streak: 3.1.0
+      mdast-util-from-markdown: 2.0.0
+      mdast-util-to-markdown: 2.1.0
+      unist-util-remove-position: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
+
   mdast-util-mdx-expression@2.0.0:
     dependencies:
       '@types/estree-jsx': 1.0.5
@@ -7511,6 +7579,16 @@ snapshots:
       micromark-extension-gfm-tagfilter: 2.0.0
       micromark-extension-gfm-task-list-item: 2.0.1
       micromark-util-combine-extensions: 2.0.0
+      micromark-util-types: 2.0.0
+
+  micromark-extension-math@3.0.0:
+    dependencies:
+      '@types/katex': 0.16.7
+      devlop: 1.1.0
+      katex: 0.16.10
+      micromark-factory-space: 2.0.0
+      micromark-util-character: 2.1.0
+      micromark-util-symbol: 2.0.0
       micromark-util-types: 2.0.0
 
   micromark-extension-mdx-expression@3.0.0:
@@ -8192,6 +8270,10 @@ snapshots:
       define-properties: 1.2.1
       set-function-name: 2.0.1
 
+  rehype-expressive-code@0.35.2:
+    dependencies:
+      expressive-code: 0.35.2
+
   rehype-external-links@3.0.0:
     dependencies:
       '@types/hast': 3.0.1
@@ -8200,6 +8282,16 @@ snapshots:
       is-absolute-url: 4.0.1
       space-separated-tokens: 2.0.2
       unist-util-visit: 5.0.0
+
+  rehype-katex@7.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/katex': 0.16.7
+      hast-util-from-html-isomorphic: 2.0.0
+      hast-util-to-text: 4.0.1
+      katex: 0.16.10
+      unist-util-visit-parents: 6.0.1
+      vfile: 6.0.1
 
   rehype-parse@9.0.0:
     dependencies:
@@ -8226,10 +8318,6 @@ snapshots:
       rehype-stringify: 10.0.0
       unified: 11.0.4
 
-  remark-expressive-code@0.34.1:
-    dependencies:
-      expressive-code: 0.34.1
-
   remark-gfm@4.0.0:
     dependencies:
       '@types/mdast': 4.0.3
@@ -8237,6 +8325,15 @@ snapshots:
       micromark-extension-gfm: 3.0.0
       remark-parse: 11.0.0
       remark-stringify: 11.0.0
+      unified: 11.0.4
+    transitivePeerDependencies:
+      - supports-color
+
+  remark-math@6.0.0:
+    dependencies:
+      '@types/mdast': 4.0.3
+      mdast-util-math: 3.0.0
+      micromark-extension-math: 3.0.0
       unified: 11.0.4
     transitivePeerDependencies:
       - supports-color
