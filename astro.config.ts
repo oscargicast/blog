@@ -1,6 +1,7 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import { shield } from '@kindspells/astro-shield';
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
@@ -28,6 +29,23 @@ export default defineConfig({
 		}),
 		sitemap(),
 		mdx(),
+    shield({
+      // - If not set, no security headers will be generated in the middleware.
+      securityHeaders: {
+        // - If set, it controls how the CSP (Content Security Policy) header will
+        //   be generated in the middleware.
+        // - If not set, no CSP header will be generated in the middleware.
+        contentSecurityPolicy: {
+          // - If set, it controls the "default" CSP directives (they can be
+          //   overriden at runtime).
+          // - If not set, the middleware will use a minimal set of default
+          //   directives.
+          cspDirectives: {
+            'default-src': "'none'",
+          }
+        }
+      }
+    })
 	],
 	markdown: {
 		rehypePlugins: [
