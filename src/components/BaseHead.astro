@@ -49,6 +49,16 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
   onload="renderMathInElement(document.body);"
 ></script>
 
+<!-- Google Tag Manager -->
+<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=GTM-TL9K83BV"></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GTM-TL9K83BV');
+</script>
+
 {/* Primary Meta Tags */}
 <meta content={siteTitle} name="title" />
 <meta content={description} name="description" />

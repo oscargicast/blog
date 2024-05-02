@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { shield } from '@kindspells/astro-shield';
@@ -16,21 +17,21 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
 // https://astro.build/config
 export default defineConfig({
-	image: {
-		domains: ["oscargicast.com", "credly.com"],
-		remotePatterns: [{
-			hostname: '**.amazonaws.com',
-			protocol: 'https',
-		}],
-	},
-	integrations: [
-		expressiveCode(expressiveCodeOptions),
-		icon(),
-		tailwind({
-			applyBaseStyles: false,
-		}),
-		sitemap(),
-		mdx(),
+  image: {
+    domains: ["oscargicast.com", "credly.com"],
+    remotePatterns: [{
+      hostname: '**.amazonaws.com',
+      protocol: 'https'
+    }]
+  },
+  integrations: [
+    expressiveCode(expressiveCodeOptions),
+    icon(),
+    tailwind({
+      applyBaseStyles: false
+    }),
+    sitemap(),
+    mdx(),
     shield({
       // - If not set, no security headers will be generated in the middleware.
       securityHeaders: {
@@ -43,59 +44,54 @@ export default defineConfig({
           // - If not set, the middleware will use a minimal set of default
           //   directives.
           cspDirectives: {
-            'default-src': "'none'",
+            'default-src': "'none'"
           }
         }
       }
-    })
-	],
-	markdown: {
-		rehypePlugins: [
-			[
-				rehypeExternalLinks,
-				{
-					rel: ["nofollow, noopener, noreferrer"],
-					target: "_blank",
-				}
-			],
-      [
-        rehypeKatex,
-				{
-					// Katex plugin options
-				}
-      ]
-		],
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
+  markdown: {
+    rehypePlugins: [[rehypeExternalLinks, {
+      rel: ["nofollow, noopener, noreferrer"],
+      target: "_blank"
+    }], [rehypeKatex, {
+      // Katex plugin options
+    }]],
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime, remarkMath],
-		remarkRehype: {
-			footnoteLabelProperties: {
-				className: [""],
-			},
-		},
-	},
-	// https://docs.astro.build/en/guides/prefetch/
-	prefetch: true,
-	// ! Please remember to replace the following site property with your own domain
-	site: "https://oscargicast.com",
-	vite: {
-		optimizeDeps: {
-			exclude: ["@resvg/resvg-js"],
-		},
-		plugins: [rawFonts([".ttf", ".woff"])],
-	},
+    remarkRehype: {
+      footnoteLabelProperties: {
+        className: [""]
+      }
+    }
+  },
+  // https://docs.astro.build/en/guides/prefetch/
+  prefetch: true,
+  // ! Please remember to replace the following site property with your own domain
+  site: "https://oscargicast.com",
+  vite: {
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"]
+    },
+    plugins: [rawFonts([".ttf", ".woff"])]
+  }
 });
-
 function rawFonts(ext: string[]) {
-	return {
-		name: "vite-plugin-raw-fonts",
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		transform(_, id) {
-			if (ext.some((e) => id.endsWith(e))) {
-				const buffer = fs.readFileSync(id);
-				return {
-					code: `export default ${JSON.stringify(buffer)}`,
-					map: null,
-				};
-			}
-		},
-	};
+  return {
+    name: "vite-plugin-raw-fonts",
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    transform(_, id) {
+      if (ext.some(e => id.endsWith(e))) {
+        const buffer = fs.readFileSync(id);
+        return {
+          code: `export default ${JSON.stringify(buffer)}`,
+          map: null
+        };
+      }
+    }
+  };
 }
