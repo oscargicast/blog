@@ -51,8 +51,9 @@ export default defineConfig({
     }),
     partytown({
       config: {
+        debug: true,
         forward: ["dataLayer.push"],
-      },
+      }
     }),
   ],
   markdown: {
