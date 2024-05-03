@@ -18,7 +18,7 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 // https://astro.build/config
 export default defineConfig({
   image: {
-    domains: ["oscargicast.com", "credly.com"],
+    domains: ["oscargicast.com", "credly.com", "www.googletagmanager.com"],
     remotePatterns: [{
       hostname: '**.amazonaws.com',
       protocol: 'https'
@@ -81,6 +81,7 @@ export default defineConfig({
     plugins: [rawFonts([".ttf", ".woff"])]
   }
 });
+
 function rawFonts(ext: string[]) {
   return {
     name: "vite-plugin-raw-fonts",
