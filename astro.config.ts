@@ -22,7 +22,11 @@ export default defineConfig({
     remotePatterns: [{
       hostname: '**.amazonaws.com',
       protocol: 'https'
-    }]
+    }, {
+      hostname: '**.cloudflareinsights.com',
+      protocol: 'https'
+    }
+  ]
   },
   integrations: [
     expressiveCode(expressiveCodeOptions),
