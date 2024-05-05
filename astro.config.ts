@@ -1,5 +1,4 @@
 import mdx from "@astrojs/mdx";
-import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { shield } from '@kindspells/astro-shield';
@@ -51,12 +50,6 @@ export default defineConfig({
             'default-src': "'none'"
           }
         }
-      }
-    }),
-    partytown({
-      config: {
-        debug: true,
-        forward: ["dataLayer.push"],
       }
     }),
   ],
