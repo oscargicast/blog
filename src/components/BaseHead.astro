@@ -27,7 +27,6 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <link href="/manifest.webmanifest" rel="manifest" />
 <link href={canonicalURL} rel="canonical" />
 
-
 <!-- Katex -->
 <link
   rel="stylesheet"
@@ -48,16 +47,6 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
   crossorigin="anonymous"
   onload="renderMathInElement(document.body);"
 ></script>
-
-<!-- Google tag (gtag.js) -->
-<script type="text/partytown"  src="https://www.googletagmanager.com/gtag/js?id=G-MZZTGL28ZP"></script>
-<script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MZZTGL28ZP');
-</script>
 
 {/* Primary Meta Tags */}
 <meta content={siteTitle} name="title" />
