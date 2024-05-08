@@ -9,7 +9,7 @@ interface Props extends SocialButtonProps {
   buttons?: (typeof TwitterShareButton | typeof FacebookShareButton | typeof LinkedInShareButton | typeof WhatsAppShareButton)[];
 }
 
-const DEFAULT_COMPONENTS = [LinkedInShareButton, TwitterShareButton, WhatsAppShareButton, FacebookShareButton];
+const DEFAULT_COMPONENTS = [LinkedInShareButton, TwitterShareButton, FacebookShareButton, WhatsAppShareButton];
 
 const { buttons=DEFAULT_COMPONENTS, url=Astro.request.url, title, description, via} = Astro.props;
 
