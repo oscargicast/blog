@@ -1,0 +1,20 @@
+---
+import FacebookShareButton from '@/components/social/Facebook.astro';
+import LinkedInShareButton from '@/components/social/LinkedIn.astro';
+import TwitterShareButton from '@/components/social/Twitter.astro';
+import WhatsAppShareButton from '@/components/social/Whatsapp.astro';
+import type { SocialButtonProps } from "@/types";
+
+interface Props extends SocialButtonProps {
+  buttons?: (typeof TwitterShareButton | typeof FacebookShareButton | typeof LinkedInShareButton | typeof WhatsAppShareButton)[];
+}
+
+const DEFAULT_COMPONENTS = [LinkedInShareButton, TwitterShareButton, WhatsAppShareButton, FacebookShareButton];
+
+const { buttons=DEFAULT_COMPONENTS, url=Astro.request.url, title, description, via} = Astro.props;
+
+---
+
+<div class="flex flex-wrap gap-6 my-8">
+  {buttons.map((Button) => <Button url={url} description={description} via={via} title={title} />)}
+</div>
