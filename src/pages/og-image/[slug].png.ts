@@ -32,9 +32,9 @@ const ogOptions: SatoriOptions = {
 const markup = (description: string, title: string, pubDate: string) =>
 	html`<div tw="flex flex-col w-full h-full bg-[#141E46] text-[#FFF5E0]">
 		<div tw="flex flex-col flex-1 w-full p-10 justify-center">
-			<p tw="text-3xl mb-6">${pubDate}</p>
+			<p tw="text-3xl mb-6 text-[#FF0080]">${pubDate}</p>
 			<h1 tw="text-6xl font-bold leading-snug text-[#8DECB4]">${title}</h1>
-			<h2 tw="mt--4 text-3xl font-bold leading-snug text-[#FFF5E0]">${title}</h2>
+			<h2 tw="mt--3 text-3xl font-bold leading-snug text-[#FFF5E0]">${description}</h2>
 		</div>
 		<div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
 			<div tw="flex items-center">
@@ -55,7 +55,7 @@ const markup = (description: string, title: string, pubDate: string) =>
 				</svg>
 				<p tw="text-3xl ml-2 font-semibold">${siteConfig.title}</p>
 			</div>
-			<p tw="text-4xl>oscargicast.com</p>
+			<p tw="text-3xl font-semibold">oscargicast.com</p>
 		</div>
 	</div>`;
 
