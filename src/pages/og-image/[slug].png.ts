@@ -34,14 +34,28 @@ const markup = (description: string, title: string, pubDate: string) =>
 		<div tw="flex flex-col flex-1 w-full p-10 justify-center">
 			<p tw="text-3xl mb-6">${pubDate}</p>
 			<h1 tw="text-6xl font-bold leading-snug text-[#8DECB4]">${title}</h1>
-			<h2 tw="mt-8 text-3xl font-bold leading-snug text-[#FFF5E0]">${title}</h2>
+			<h2 tw="mt--4 text-3xl font-bold leading-snug text-[#FFF5E0]">${title}</h2>
 		</div>
 		<div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
 			<div tw="flex items-center">
-				🐍
-				<p tw="text-2xl ml-3 font-semibold">${siteConfig.title}</p>
+				<svg height="60" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+					<path d="M200,300 L400,50 L600,300 L800,550 L1000,300" fill="none" stroke="#FFF5E0" stroke-width="15" />
+				  <path d="M200,300 Q400,50 600,300 T1000,300" fill="none" stroke="#FF0080" stroke-width="35"  />
+				  <!-- End points -->
+				  <g fill="#8DECB4" >
+						<circle cx="200" cy="300" r="30"/>
+						<circle cx="600" cy="300" r="30"/>
+						<circle cx="1000" cy="300" r="30"/>
+					</g>
+					<!-- Control points and lines from end points to control points -->
+					<g fill="#8DECB4" >
+						<circle cx="400" cy="50" r="30"/>
+						<circle cx="800" cy="550" r="30"/>
+				  </g>
+				</svg>
+				<p tw="text-3xl ml-2 font-semibold">${siteConfig.title}</p>
 			</div>
-			<p>by ${siteConfig.author}</p>
+			<p tw="text-4xl>oscargicast.com</p>
 		</div>
 	</div>`;
 
