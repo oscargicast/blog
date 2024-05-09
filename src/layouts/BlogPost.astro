@@ -3,7 +3,6 @@ import type { CollectionEntry } from "astro:content";
 
 import BlogHero from "@/components/blog/Hero.astro";
 import TOC from "@/components/blog/TOC.astro";
-import PostComments from "@/components/Comments.astro";
 import WebMentions from "@/components/blog/webmentions/index.astro";
 
 import BaseLayout from "./Base.astro";
@@ -34,7 +33,6 @@ const { headings } = await post.render();
 				<WebMentions />
 			</div>
 		</article>
-  <PostComments />
 	</div>
 	<button
 		aria-label="Back to Top"
