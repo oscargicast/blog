@@ -1,28 +1,51 @@
 <div id="giscuss-container" class="mt-8"></div>
 
 <script>
-  const script = document.createElement("script");
   const container = document.querySelector("#giscuss-container");
+  let script;
 
-  Object.entries({
-    src: "https://giscus.app/client.js",
-    "data-repo": "oscargicast/blog",
-    "data-repo-id": "R_kgDOL0sQGg",
-    "data-category": "Blog Post Comments",
-    "data-category-id": "DIC_kwDOL0sQGs4CfPJU",
-    "data-mapping": "url",
-    "data-strict": "0",
-    "data-reactions-enabled": "1",
-    "data-emit-metadata": "1",
-    "data-input-position": "top",
-    "data-theme": "dark",
-    "data-lang": "en",
-    "data-loading": "lazy",
-    crossorigin: "anonymous",
-  }).forEach(([key, value]) => {
-    script.setAttribute(key, value);
+  function loadGiscus(theme) {
+    if (script) {
+      container.removeChild(script);
+      script = null;
+    }
+
+    script = document.createElement("script");
+    Object.entries({
+      src: "https://giscus.app/client.js",
+      "data-repo": "oscargicast/blog",
+      "data-repo-id": "R_kgDOL0sQGg",
+      "data-category": "Blog Post Comments",
+      "data-category-id": "DIC_kwDOL0sQGs4CfPJU",
+      "data-mapping": "url",
+      "data-strict": "0",
+      "data-reactions-enabled": "1",
+      "data-emit-metadata": "1",
+      "data-input-position": "top",
+      "data-theme": theme,
+      "data-lang": "en",
+      crossorigin: "anonymous",
+    }).forEach(([key, value]) => {
+      script.setAttribute(key, value);
+    });
+    script.setAttribute("async", "true");
+    container.appendChild(script);
+  }
+
+  // Observar cambios en el atributo 'data-theme' del elemento raíz
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        const newTheme = document.documentElement.getAttribute('data-theme');
+        loadGiscus(newTheme);
+      }
+    });
   });
-  script.setAttribute("async", "true");
 
-  container?.appendChild(script);
+  observer.observe(document.documentElement, {
+    attributes: true,
+  });
+
+  // Carga inicial de Giscus con tema oscuro por defecto
+  loadGiscus('dark');
 </script>
