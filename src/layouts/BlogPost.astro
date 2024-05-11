@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
+import Giscus from "@/components/Giscus.astro";
 import BlogHero from "@/components/blog/Hero.astro";
 import TOC from "@/components/blog/TOC.astro";
 import WebMentions from "@/components/blog/webmentions/index.astro";
@@ -31,6 +32,7 @@ const { headings } = await post.render();
 			>
 				<slot />
 				<WebMentions />
+				<Giscus />
 			</div>
 		</article>
 	</div>

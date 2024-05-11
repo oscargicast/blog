@@ -24,6 +24,9 @@ export default defineConfig({
     }, {
       hostname: '**.cloudflareinsights.com',
       protocol: 'https'
+    }, {
+      hostname: '**.github.com',
+      protocol: 'https'
     }
   ]
   },
