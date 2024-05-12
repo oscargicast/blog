@@ -63,9 +63,11 @@ def decorator_handler(_func=None, *, arg1=None, arg2=None):
           return value
       return wrapper
 
-    if _func is None:  # Decorated func without arguments.
+    if _func is None:  # Decorated func WITH arguments.
+        # @decorator_handler(repeat=2)
         return decorator
-    else:  # Decorated func with arguments.
+    else:  # Decorated func WITHOUT arguments.
+        # @decorator_handler
         return decorator(_func)
 ```
 
@@ -107,19 +109,19 @@ def decorated_echo_2(s: str) -> str:
 
 if __name__ == "__main__":
     # Decorating explicitly the echo function:
-    # @decorator
+    # @decorator_handler
     decorator_handler(echo)("hola")
-    # @decorator()
+    # @decorator_handler()
     decorator_handler()(echo)("hola")
-    # @decorator(repeat=2)
+    # @decorator_handler(repeat=2)
     decorator_handler(repeat=2)(echo)("hola")
 
     # Calling decorated functions:
-    # @decorator
+    # @decorator_handler
     decorated_echo_none("bye")
-    # @decorator()
+    # @decorator_handler()
     decorated_echo_1("bye")
-    # @decorator(repeat=2)
+    # @decorator_handler(repeat=2)
     decorated_echo_2("bye")
 ```
 
