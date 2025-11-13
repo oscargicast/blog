@@ -1,7 +1,30 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@theme {
+  /* Custom colors */
+  --color-accent: hsl(var(--theme-accent) / <alpha-value>);
+  --color-accent-2: hsl(var(--theme-accent-2) / <alpha-value>);
+  --color-bgColor: hsl(var(--theme-bg) / <alpha-value>);
+  --color-link: hsl(var(--theme-link) / <alpha-value>);
+  --color-quote: hsl(var(--theme-quote) / <alpha-value>);
+  --color-textColor: hsl(var(--theme-text) / <alpha-value>);
+
+  /* Custom fonts */
+  --font-family-sans: "Roboto Condensed", ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility cactus-link {
+  @apply underline underline-offset-2;
+
+  &:hover {
+    @apply decoration-link decoration-2;
+  }
+}
+
+@utility title {
+  @apply text-2xl font-semibold text-accent-2;
+}
 
 @layer base {
 	:root,

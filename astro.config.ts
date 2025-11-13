@@ -1,7 +1,7 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import { shield } from '@kindspells/astro-shield';
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
@@ -9,7 +9,7 @@ import fs from "fs";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
-import remarkUnwrapImages from "remark-unwrap-images";
+import rehypeUnwrapImages from "rehype-unwrap-images";
 
 import { expressiveCodeOptions } from "./src/site.config";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
@@ -33,9 +33,6 @@ export default defineConfig({
   integrations: [
     expressiveCode(expressiveCodeOptions),
     icon(),
-    tailwind({
-      applyBaseStyles: false
-    }),
     sitemap(),
     mdx(),
     shield({
@@ -57,13 +54,17 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    rehypePlugins: [[rehypeExternalLinks, {
-      rel: ["nofollow, noopener, noreferrer"],
-      target: "_blank"
-    }], [rehypeKatex, {
-      // Katex plugin options
-    }]],
-    remarkPlugins: [remarkUnwrapImages, remarkReadingTime, remarkMath],
+    rehypePlugins: [
+      [rehypeExternalLinks, {
+        rel: ["nofollow, noopener, noreferrer"],
+        target: "_blank"
+      }],
+      [rehypeKatex, {
+        // Katex plugin options
+      }],
+      rehypeUnwrapImages
+    ],
+    remarkPlugins: [remarkReadingTime, remarkMath],
     remarkRehype: {
       footnoteLabelProperties: {
         className: [""]
@@ -78,7 +79,7 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"]
     },
-    plugins: [rawFonts([".ttf", ".woff"])]
+    plugins: [tailwindcss(), rawFonts([".ttf", ".woff"])]
   }
 });
 
